@@ -30,6 +30,6 @@ For convenience, this example uses my PayPal Sandbox Credentials. To test with y
 
 Login to the account and get your API credentials from the [API Access](https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_profile-api-access) page.
 
-Copy the API Credentials into `http://example.com/paypal-examples/examples/functions.php`.
+Copy the API Credentials into `http://example.com/paypal-examples/functions.php`.
 
 
