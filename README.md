@@ -17,7 +17,7 @@ This repository is designed to do three things:
 
 To run the examples for yourself, clone the entire folder somewhere onto your server, eg. `http://example.com/paypal-examples/`.
 
-	`git clone --recursive git://github.com/thenbrent/paypal-digital-goods-php-examples.git`
+	git clone --recursive git://github.com/thenbrent/paypal-digital-goods-php-examples.git
 
 Note the use of the `--recursive` flag. This is must be included to clone the submodule.
 
