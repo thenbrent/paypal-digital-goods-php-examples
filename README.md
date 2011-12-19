@@ -4,14 +4,16 @@ PayPal's Digital Goods for Express Checkout service is a wonderful payment solut
 
 I created the [PayPal Digital Goods PHP Library](https://github.com/thenbrent/paypal-digital-goods/) to connect the dots in the documentation and offer a PayPal library that is friendly to humans. 
 
+# Goals
 
-# Usage
-
-This project does three things:
+This repository is designed to do three things:
 
 * demonstrate the PayPal PHP library in action;
 * demonstrate how to setup the PHP library for your own use;
 * show how to include the [PayPal Digital Goods PHP Library](https://github.com/thenbrent/paypal-digital-goods/) as a submodule in your applications main Git repository.
+
+
+# Usage
 
 To run the examples for yourself, clone the entire folder somewhere onto your server, eg. `http://example.com/paypal-examples/`.
 
