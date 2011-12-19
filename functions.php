@@ -1,16 +1,15 @@
 <?php
 /**
- * A global variable for storing our PayPal Digital Goods Object
+ * Get the PayPal Digital Goods class definitions from the PayPal Digital Goods PHP Library.
  */
-global $paypal;
-
-require_once( '../paypal-digital-goods.class.php' );
-require_once( '../paypal-subscription.class.php' );
-require_once( '../paypal-purchase.class.php' );
+require_once( 'lib/paypal-digital-goods/paypal-digital-goods.class.php' );
+require_once( 'lib/paypal-digital-goods/paypal-subscription.class.php' );
+require_once( 'lib/paypal-digital-goods/paypal-purchase.class.php' );
 
 
 /**
- * Used to create a central function for getting credentials for both Subscription & Purchase objects
+ * A central function for settings the credentials for both subscription & purchase 
+ * objects with the PayPal_Digital_Goods_Configuration registry class.
  */
 function set_credentials() {
 
@@ -32,8 +31,9 @@ function set_credentials() {
 		exit( 'You must set your API credentials in ' . __FILE__ . ' for this example to work.' );
 }
 
+
 /**
- * Creates a PayPal Digital Goods Purchase Object
+ * Creates and returns a PayPal DG Purchase Object
  */
 function create_example_purchase() {
 
@@ -48,7 +48,7 @@ function create_example_purchase() {
 				'item_name'        => 'First item name',
 				'item_description' => 'This is a description of the first item in the cart, it costs $9.00',
 				'item_amount'      => '9.00',
-	//			'item_tax'         => '1.00',
+				'item_tax'         => '1.00',
 				'item_quantity'    => 1,
 				'item_number'      => 'XF100',
 			),
@@ -56,7 +56,7 @@ function create_example_purchase() {
 				'item_name'        => 'Second Item',
 				'item_description' => 'This is a description of the SECOND item in the cart, it costs $1.00 but there are 3 of them.',
 				'item_amount'      => '1.00',
-	//			'item_tax'         => '1.00',
+				'item_tax'         => '1.00',
 				'item_quantity'    => 3,
 				'item_number'      => 'XJ100',
 			),
@@ -67,15 +67,15 @@ function create_example_purchase() {
 }
 
 
-
 /**
- * Creates a PayPal Subscription Object
+ * Creates and returns a PayPal DG Subscription Object
  */
 function create_example_subscription() {
 
 	set_credentials();
 
 	$subscription_details = array(
+		'description'        => 'Example Subscription: $10 sign-up fee then $2/week for the next four weeks.',
 		'initial_amount'     => '10.00',
 		'amount'             => '2.00',
 		'period'             => 'Week',
@@ -87,6 +87,9 @@ function create_example_subscription() {
 }
 
 
+/**
+ * Helper function to get the URI for the script
+ */
 function get_script_uri( $script = 'index.php' ){
 	// IIS Fix
 	if( empty( $_SERVER['REQUEST_URI'] ) )
