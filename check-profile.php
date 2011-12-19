@@ -2,7 +2,7 @@
 require_once( 'functions.php' );
 
 if( ! isset( $_GET['profile_id'] ) && ! isset( $_GET['transaction_id'] ) )
-	die('Check Profile Requires a profile_id or transaction_id specified in the URL ($_GET)');
+	die( 'Check Profile Requires a profile_id or transaction_id specified in the URL ($_GET)' );
 
 ?>
 <html>
