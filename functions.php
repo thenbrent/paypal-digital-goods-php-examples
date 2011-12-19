@@ -40,7 +40,7 @@ function create_example_purchase() {
 	set_credentials();
 
 	$purchase_details = array(
-		'name'   => 'Digital Good Purchase Example',
+		'name'        => 'Digital Good Purchase Example',
 		'description' => 'Example Digital Good Purchase',
 		'amount'      => '12.00',
 		'items'       => array(
@@ -56,7 +56,7 @@ function create_example_purchase() {
 				'item_name'        => 'Second Item',
 				'item_description' => 'This is a description of the SECOND item in the cart, it costs $1.00 but there are 3 of them.',
 				'item_amount'      => '1.00',
-				'item_tax'         => '1.00',
+				'item_tax'         => '0.50',
 				'item_quantity'    => 3,
 				'item_number'      => 'XJ100',
 			),
