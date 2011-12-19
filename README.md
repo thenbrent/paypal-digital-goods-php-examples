@@ -19,9 +19,9 @@ To run the examples for yourself, clone the entire folder somewhere onto your se
 
 	git clone --recursive git://github.com/thenbrent/paypal-digital-goods-php-examples.git
 
-Note the use of the `--recursive` flag. This is must be included to clone the submodule.
+Note the use of the `--recursive` flag. This must be included to clone the library as it is included as a [Git submodule](http://book.git-scm.com/5_submodules.html).
 
-Then load `http://example.com/paypal-examples/index.php` in your browser & follow the links.
+Once cloned, visit `http://example.com/paypal-examples/index.php` in your browser & follow the links.
 
 
 # Your Own Credentials
