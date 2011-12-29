@@ -26,7 +26,7 @@ Once cloned, visit `http://example.com/paypal-examples/index.php` in your browse
 
 # Your Own Credentials
 
-For convenience, this example uses my PayPal Sandbox Credentials. To test with your own API credentials, create a sandbox seller account and request it be set as a Digital Goods account in this [x.com forums topic](https://www.x.com/thread/49892).
+For convenience, this example uses my PayPal Sandbox Credentials. To test with your own API credentials, create a sandbox seller account and request it be set as a Digital Goods account in this [x.com forums topic](https://www.x.com/developers/paypal/forums/digital-goods/express-checkout-digital-goods-sandbox).
 
 Login to the account and get your API credentials from the [API Access](https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_profile-api-access) page.
 
