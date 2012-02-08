@@ -27,6 +27,9 @@ function set_credentials() {
 	PayPal_Digital_Goods_Configuration::cancel_url( get_script_uri( 'return.php?paypal=cancel' ) );
 	PayPal_Digital_Goods_Configuration::business_name( 'Demo Store' );
 
+	// Uncomment the line below to switch to the live PayPal site
+	//PayPal_Digital_Goods_Configuration::environment( 'live' );
+
 	if( PayPal_Digital_Goods_Configuration::username() == 'your_api_username' || PayPal_Digital_Goods_Configuration::password() == 'your_api_password' || PayPal_Digital_Goods_Configuration::signature() == 'your_api_signature' )
 		exit( 'You must set your API credentials in ' . __FILE__ . ' for this example to work.' );
 }
