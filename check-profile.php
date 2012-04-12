@@ -19,7 +19,7 @@ if( ! isset( $_GET['profile_id'] ) && ! isset( $_GET['transaction_id'] ) )
 		<h2>PayPal Subscription Details</h2>
 		<pre>
 $paypal->get_profile_details( $_GET['profile_id'] ) ) = 
-<? print_r( $paypal->get_profile_details( $_GET['profile_id'] ) ); ?>
+<?php print_r( $paypal->get_profile_details( $_GET['profile_id'] ) ); ?>
 		</pre>
 
 	<?php else : ?>
@@ -28,7 +28,7 @@ $paypal->get_profile_details( $_GET['profile_id'] ) ) =
 		<h2>PayPal Transaction Details</h2>
 		<pre>
 $paypal->get_transaction_details( $_GET['transaction_id'] ) ); = 
-<? print_r( $paypal->get_transaction_details( $_GET['transaction_id'] ) ); ?>
+<?php print_r( $paypal->get_transaction_details( $_GET['transaction_id'] ) ); ?>
 		</pre>
 
 	<?php endif; ?>
