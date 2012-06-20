@@ -27,6 +27,8 @@ function set_credentials() {
 	PayPal_Digital_Goods_Configuration::cancel_url( get_script_uri( 'return.php?paypal=cancel' ) );
 	PayPal_Digital_Goods_Configuration::business_name( 'Demo Store' );
 
+	PayPal_Digital_Goods_Configuration::notify_url( get_script_uri( 'return.php?paypal=notify' ) );
+
 	// Uncomment the line below to switch to the live PayPal site
 	//PayPal_Digital_Goods_Configuration::environment( 'live' );
 
@@ -45,12 +47,13 @@ function create_example_purchase() {
 	$purchase_details = array(
 		'name'        => 'Digital Good Purchase Example',
 		'description' => 'Example Digital Good Purchase',
-		'amount'      => '12.00',
+		'amount'      => '15.50',
+		'tax_amount'  => '2.50',
 		'items'       => array(
 			array( // First item
 				'item_name'        => 'First item name',
 				'item_description' => 'This is a description of the first item in the cart, it costs $9.00',
-				'item_amount'      => '9.00',
+				'item_amount'      => '10.00',
 				'item_tax'         => '1.00',
 				'item_quantity'    => 1,
 				'item_number'      => 'XF100',
