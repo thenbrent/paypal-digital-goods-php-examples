@@ -22,10 +22,10 @@ require_once( 'functions.php' );
 
 		// Process the payment or start the Subscription
 		if( isset( $_GET['PayerID'] ) ) {
-			$paypal = create_example_purchase();
+			$paypal   = create_example_purchase();
 			$response = $paypal->process_payment();
 		} else { 
-			$paypal = create_example_subscription();
+			$paypal   = create_example_subscription();
 			$response = $paypal->start_subscription();
 		}
 		?>
