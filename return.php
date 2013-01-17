@@ -39,8 +39,14 @@ require_once( 'functions.php' );
 		<?php } else { ?>
 			<p>Your Payment Profile ID is <?php echo $response['PROFILEID']; ?></p>
 			<p>You can use this Profile ID to see the details of your subscription like so:</p>
-			<pre><code>get_profile_details('<?php echo $response['PROFILEID']; ?>');</code></pre>
+			<pre><code>$paypal->get_profile_details('<?php echo $response['PROFILEID']; ?>');</code></pre>
 			<p><a href="<?php echo get_script_uri( 'check-profile.php?profile_id=' . urlencode($response['PROFILEID']) ) ?>" target="_top">Check Profile &raquo;</a></p>
+			<p>You can use suspend this subscription like this:</p>
+			<pre><code>$paypal->manage_subscription_status('<?php echo $response['PROFILEID']; ?>', 'Suspend');</code></pre>
+			<p><a href="<?php echo get_script_uri( 'check-profile.php?profile_id=' . urlencode($response['PROFILEID']) . '&action=suspend' ) ?>" target="_top">Suspend &raquo;</a></p>
+			<p>Or permanently cancel it like this:</p>
+			<pre><code>$paypal->manage_subscription_status('<?php echo $response['PROFILEID']; ?>', 'Cancel');</code></pre>
+			<p><a href="<?php echo get_script_uri( 'check-profile.php?profile_id=' . urlencode($response['PROFILEID']) . '&action=cancel' ) ?>" target="_top">Cancel &raquo;</a></p>
 		<?php } ?>
 
 	<?php endif; ?>

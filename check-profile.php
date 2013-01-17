@@ -11,16 +11,33 @@ if( ! isset( $_GET['profile_id'] ) && ! isset( $_GET['transaction_id'] ) )
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<div class="container" style="width: 550px;">
+	<div class="container">
 
-	<?php if( isset( $_GET['profile_id'] ) ) : ?>
-		<?php $paypal = create_example_subscription(); ?>
+	<?php if( isset( $_GET['profile_id'] ) ) :
+		$paypal = create_example_subscription();
+
+		if( isset( $_GET['action'] ) ) {
+			if( 'suspend' == $_GET['action'] )
+				$paypal->manage_subscription_status( $_GET['profile_id'], 'Suspend', 'Suspended subscription via PayPal Digital Goods PHP Example');
+			elseif( 'cancel' == $_GET['action'] )
+				$paypal->manage_subscription_status( $_GET['profile_id'], 'Cancel', 'Cancelled subscription via PayPal Digital Goods PHP Example');
+			elseif( 'reactivate' == $_GET['action'] )
+				$paypal->manage_subscription_status( $_GET['profile_id'], 'Reactivate', 'Reactivated subscription via PayPal Digital Goods PHP Example');
+		} ?>
 
 		<h2>PayPal Subscription Details</h2>
 		<pre>
 $paypal->get_profile_details( $_GET['profile_id'] ) ) = 
-<?php print_r( $paypal->get_profile_details( $_GET['profile_id'] ) ); ?>
+<?php $profile_details = $paypal->get_profile_details( $_GET['profile_id'] ); ?>
+<?php print_r( $profile_details ); ?>
 		</pre>
+
+		<?php if ( 'Active' == $profile_details['STATUS'] ) : ?>
+		<p><a href="<?php echo get_script_uri( 'check-profile.php?profile_id=' . $_GET['profile_id'] . '&action=suspend' ) ?>" target="_top">Suspend Subscription &raquo;</a></p>
+		<p><a href="<?php echo get_script_uri( 'check-profile.php?profile_id=' . $_GET['profile_id'] . '&action=cancel' ) ?>" target="_top">Cancel Subscription &raquo;</a></p>
+		<?php elseif ( 'Suspended' == $profile_details['STATUS'] ) : ?>
+		<p><a href="<?php echo get_script_uri( 'check-profile.php?profile_id=' . $_GET['profile_id'] . '&action=reactivate' ) ?>" target="_top">Reactivate Subscription &raquo;</a></p>
+		<?php endif; ?>
 
 	<?php else : ?>
 		<?php $paypal = create_example_purchase(); ?>
